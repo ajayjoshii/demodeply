@@ -11,7 +11,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: process.env.FRONTEND_URL }));
+// app.use(cors({ origin: process.env.FRONTEND_URL }));
+app.use(cors({
+  origin: '*'
+}));
+
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
@@ -20,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {
 }).then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-  app.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Backend is running');
 });
 

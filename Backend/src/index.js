@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const authRoutes = require("./routes/authRoutes"); // no .js needed in CommonJS
+const authRoutes = require("././routes/authRoutes"); // no .js needed in CommonJS
 
 dotenv.config();
 const app = express();

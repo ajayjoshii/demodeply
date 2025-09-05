@@ -20,6 +20,10 @@ mongoose.connect(process.env.MONGO_URI, {
 }).then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+  app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
+
 // Routes
 app.post('/api/register', async (req, res) => {
   const { name, email, password } = req.body;
